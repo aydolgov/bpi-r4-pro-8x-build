@@ -49,14 +49,22 @@ jobs:
           CONFIG_PACKAGE_luci-ssl=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-package-manager=y
+          CONFIG_PACKAGE_luci-proto-ppp=y
+          CONFIG_PACKAGE_luci-proto-ipv6=y
           CONFIG_PACKAGE_wpad-openssl=y
+          # CONFIG_PACKAGE_wpad-basic-mbedtls is not set
           CONFIG_PACKAGE_ca-bundle=y
           CONFIG_PACKAGE_ethtool=y
           CONFIG_PACKAGE_ip-full=y
           CONFIG_PACKAGE_uboot-envtools=y
+          CONFIG_PACKAGE_dnsmasq-full=y
+          # CONFIG_PACKAGE_dnsmasq is not set
           CONFIG_PACKAGE_kmod-nft-tproxy=y
+          CONFIG_PACKAGE_kmod-nf-tproxy=y
+          CONFIG_PACKAGE_kmod-ipt-tproxy=y
           CONFIG_PACKAGE_kmod-nft-socket=y
           CONFIG_PACKAGE_kmod-inet-diag=y
+          CONFIG_PACKAGE_nftables-json=y
           CONFIG_PACKAGE_kmod-tun=y
           CONFIG_PACKAGE_kmod-ipsec=y
           CONFIG_PACKAGE_kmod-ipsec4=y
@@ -66,6 +74,66 @@ jobs:
           CONFIG_PACKAGE_kmod-iptunnel6=y
           CONFIG_PACKAGE_kmod-xfrm-interface=y
           CONFIG_PACKAGE_kmod-wireguard=y
+          CONFIG_PACKAGE_wireguard-tools=y
+          CONFIG_PACKAGE_luci-proto-wireguard=y
+          CONFIG_PACKAGE_kmod-crypto-des=y
+          CONFIG_PACKAGE_strongswan-swanctl=y
+          CONFIG_PACKAGE_strongswan-charon=y
+          CONFIG_PACKAGE_strongswan-mod-kernel-netlink=y
+          CONFIG_PACKAGE_strongswan-mod-socket-default=y
+          CONFIG_PACKAGE_strongswan-mod-aes=y
+          CONFIG_PACKAGE_strongswan-mod-des=y
+          CONFIG_PACKAGE_strongswan-mod-sha1=y
+          CONFIG_PACKAGE_strongswan-mod-sha2=y
+          CONFIG_PACKAGE_strongswan-mod-hmac=y
+          CONFIG_PACKAGE_strongswan-mod-gmp=y
+          CONFIG_PACKAGE_strongswan-mod-nonce=y
+          CONFIG_PACKAGE_strongswan-mod-random=y
+          CONFIG_PACKAGE_strongswan-mod-kdf=y
+          CONFIG_PACKAGE_strongswan-mod-openssl=y
+          CONFIG_PACKAGE_strongswan-mod-updown=y
+          CONFIG_PACKAGE_strongswan-mod-vici=y
+          CONFIG_PACKAGE_kmod-l2tp=y
+          CONFIG_PACKAGE_kmod-pppol2tp=y
+          CONFIG_PACKAGE_ppp-mod-pppol2tp=y
+          CONFIG_PACKAGE_xl2tpd=y
+          CONFIG_PACKAGE_kmod-mppe=y
+          CONFIG_PACKAGE_luci-proto-l2tp=y
+          CONFIG_PACKAGE_openvpn-openssl=y
+          CONFIG_PACKAGE_luci-app-openvpn=y
+          CONFIG_PACKAGE_nginx-full=y
+          CONFIG_PACKAGE_nginx-mod-stream=y
+          CONFIG_PACKAGE_nginx-mod-headers-more=y
+          CONFIG_PACKAGE_nginx-mod-brotli=y
+          CONFIG_PACKAGE_openssl-util=y
+          # CONFIG_PACKAGE_nginx-ssl is not set
+          # CONFIG_PACKAGE_luci-ssl-nginx is not set
+          # CONFIG_PACKAGE_nginx-mod-luci is not set
+          CONFIG_PACKAGE_acme=y
+          CONFIG_PACKAGE_acme-acmesh=y
+          CONFIG_PACKAGE_acme-acmesh-dnsapi=y
+          CONFIG_PACKAGE_luci-app-acme=y
+          CONFIG_PACKAGE_curl=y
+          CONFIG_PACKAGE_block-mount=y
+          CONFIG_PACKAGE_kmod-fs-f2fs=y
+          CONFIG_PACKAGE_e2fsprogs=y
+          CONFIG_PACKAGE_f2fs-tools=y
+          CONFIG_PACKAGE_mkf2fs=y
+          CONFIG_PACKAGE_f2fsck=y
+          CONFIG_PACKAGE_mmc-utils=y
+          CONFIG_PACKAGE_cfdisk=y
+          CONFIG_PACKAGE_openssh-sftp-server=y
+          CONFIG_PACKAGE_mc=y
+          CONFIG_PACKAGE_nano-full=y
+          CONFIG_PACKAGE_htop=y
+          CONFIG_PACKAGE_iperf3=y
+          CONFIG_PACKAGE_pciutils=y
+          CONFIG_PACKAGE_usbutils=y
+          CONFIG_PACKAGE_tcpdump=y
+          CONFIG_PACKAGE_conntrack=y
+          CONFIG_PACKAGE_lsof=y
+          CONFIG_PACKAGE_strace=y
+          CONFIG_PACKAGE_unzip=y
           EOF
           make defconfig
 
