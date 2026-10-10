@@ -77,6 +77,10 @@ jobs:
           CONFIG_PACKAGE_wireguard-tools=y
           CONFIG_PACKAGE_luci-proto-wireguard=y
           CONFIG_PACKAGE_kmod-crypto-des=y
+          # Аппаратный криптоускоритель SafeXcel (EIP-197) отключён: с mini-firmware
+          # поток charon зависает в ядре в safexcel_xcbcmac_setkey при установке IPsec SA
+          # CONFIG_PACKAGE_kmod-crypto-hw-safexcel is not set
+          # CONFIG_PACKAGE_eip197-mini-firmware is not set
           CONFIG_PACKAGE_strongswan-swanctl=y
           CONFIG_PACKAGE_strongswan-charon=y
           CONFIG_PACKAGE_strongswan-mod-kernel-netlink=y
@@ -87,18 +91,24 @@ jobs:
           CONFIG_PACKAGE_strongswan-mod-sha2=y
           CONFIG_PACKAGE_strongswan-mod-hmac=y
           CONFIG_PACKAGE_strongswan-mod-gmp=y
-          CONFIG_PACKAGE_strongswan-mod-nonce=y
+          # Пакета нет в strongSwan 6: nonce встроен в charon; из-за него strongSwan выпадал из сборки
+          # CONFIG_PACKAGE_strongswan-mod-nonce=y
           CONFIG_PACKAGE_strongswan-mod-random=y
           CONFIG_PACKAGE_strongswan-mod-kdf=y
           CONFIG_PACKAGE_strongswan-mod-openssl=y
-          CONFIG_PACKAGE_strongswan-mod-updown=y
+          # Требует kmod-ipt-ipsec (iptables legacy), которого нет для этого ядра; для swanctl не нужен
+          # CONFIG_PACKAGE_strongswan-mod-updown=y
           CONFIG_PACKAGE_strongswan-mod-vici=y
+          CONFIG_PACKAGE_strongswan-mod-farp=y
+          CONFIG_PACKAGE_strongswan-mod-attr=y
+          CONFIG_PACKAGE_xfrm=y
           CONFIG_PACKAGE_kmod-l2tp=y
           CONFIG_PACKAGE_kmod-pppol2tp=y
           CONFIG_PACKAGE_ppp-mod-pppol2tp=y
           CONFIG_PACKAGE_xl2tpd=y
           CONFIG_PACKAGE_kmod-mppe=y
-          CONFIG_PACKAGE_luci-proto-l2tp=y
+          # Отдельного пакета больше нет: протокол L2TP для LuCI входит в luci-proto-ppp
+          # CONFIG_PACKAGE_luci-proto-l2tp=y
           CONFIG_PACKAGE_openvpn-openssl=y
           CONFIG_PACKAGE_luci-app-openvpn=y
           CONFIG_PACKAGE_nginx-full=y
